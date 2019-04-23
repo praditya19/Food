@@ -13,7 +13,7 @@ const Kartu = props => {
   return (
     <div>
       <Container>
-        <Card style={{ height: "300px" }}>
+        <Card style={{ height: "280px", width: "350px" }}>
           <Row>
             <Col xs="6">
               <CardImg

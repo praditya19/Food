@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Navbar } from "reactstrap";
 
 class Counter extends Component {
   state = {
@@ -27,30 +28,32 @@ class Counter extends Component {
   render() {
     return (
       <div style={{ textAlign: "center", marginTop: "10px" }}>
-        <h1>{this.state.number}</h1>
-        <button
-          style={{
-            backgroundColor: "green",
-            width: "40px",
-            height: "40px",
-            borderRadius: "5px"
-          }}
-          onClick={this.tambah}
-        >
-          +
-        </button>{" "}
-        <button
-          style={{
-            backgroundColor: "red",
-            width: "40px",
-            height: "40px",
-            borderRadius: "5px"
-          }}
-          className="button2"
-          onClick={this.kurang}
-        >
-          -
-        </button>
+        <Navbar style={{ color: "black" }} href="/">
+          <button
+            style={{
+              backgroundColor: "green",
+              width: "40px",
+              height: "40px",
+              borderRadius: "5px"
+            }}
+            onClick={this.tambah}
+          >
+            +
+          </button>{" "}
+          <h1 style={{}}>{this.state.number}</h1>
+          <button
+            style={{
+              backgroundColor: "red",
+              width: "40px",
+              height: "40px",
+              borderRadius: "5px"
+            }}
+            className="button2"
+            onClick={this.kurang}
+          >
+            -
+          </button>
+        </Navbar>
         <br />
         <br />
         <p>Harga : {this.state.harga}</p>

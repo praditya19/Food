@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./components/header";
 import Card2 from "./components/card2";
-import { Row, Col } from "reactstrap";
+import { Row, Col, Button, Navbar } from "reactstrap";
 import "./App.css";
 
 class App extends Component {
@@ -36,7 +36,7 @@ class App extends Component {
         <h1 style={{ textAlign: "center" }}>Menu Makanan</h1>
         <Row style={{ padding: "1px" }}>
           {this.state.makanan.map(item => (
-            <Col xs="3">
+            <Col xs="4">
               <Card2 gambar={item.gambar} menu={item.nama} />
             </Col>
           ))}
