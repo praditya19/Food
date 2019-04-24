@@ -3,6 +3,7 @@ import Header from "../../components/header";
 import Counter from "../../components/counter";
 import { Row, Col, Jumbotron, Container, Button } from "reactstrap";
 import { Link } from "react-router-dom";
+import Payment from "../payment/payment";
 class Dashbor extends Component {
   state = {
     makanan: [
@@ -105,22 +106,7 @@ class Dashbor extends Component {
             </Col>
           ))}
         </Row>
-        <Jumbotron style={{ backgroundColor: "white" }} fluid>
-          <Container fluid>
-            <div style={{ textAlign: "right" }}>
-              <h5>Belanjaan Kamu :</h5>
-              <h2 style={{ marginRight: "60px" }}>{this.state.total}</h2>
-              <Button
-                style={{ marginRight: "10px" }}
-                tag={Link}
-                to="/payment"
-                color="primary"
-              >
-                Pesan Sekarang
-              </Button>
-            </div>
-          </Container>
-        </Jumbotron>
+        <Payment total={this.state.total} />
       </div>
     );
   }
