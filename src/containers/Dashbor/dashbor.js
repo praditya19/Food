@@ -105,15 +105,20 @@ class Dashbor extends Component {
             </Col>
           ))}
         </Row>
-        <Jumbotron fluid>
+        <Jumbotron style={{ backgroundColor: "white" }} fluid>
           <Container fluid>
-            <h5>Belanjaan Kamu :</h5>
-            <ul>
-              <li>{this.state.total}</li>
-            </ul>
-            <Button tag={Link} to="/pembayaran" color="primary">
-              Pesan Sekarang
-            </Button>
+            <div style={{ textAlign: "right" }}>
+              <h5>Belanjaan Kamu :</h5>
+              <h2 style={{ marginRight: "60px" }}>{this.state.total}</h2>
+              <Button
+                style={{ marginRight: "10px" }}
+                tag={Link}
+                to="/payment"
+                color="primary"
+              >
+                Pesan Sekarang
+              </Button>
+            </div>
           </Container>
         </Jumbotron>
       </div>
