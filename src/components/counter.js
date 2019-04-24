@@ -1,65 +1,55 @@
 import React, { Component } from "react";
-import { Navbar } from "reactstrap";
+import { Card, CardImg, CardBody, CardTitle, Button, Navbar } from "reactstrap";
 
-class Counter extends Component {
+export default class Counter extends Component {
   state = {
-    number: 0,
-    harga: 0,
-    biaya: 1000 * 20
+    qty: 0
   };
 
   tambah = () => {
-    this.setState(({ number, harga, biaya }) => ({
-      number: number + 1,
-      harga: harga + biaya
-    }));
+    this.setState({
+      qty: this.state.qty + 1
+    });
+    this.props.tambahTotalHarga(this.props.harga);
   };
-
   kurang = () => {
-    var number = this.state.number;
-
-    if (number > 0) {
-      this.setState(({ number, harga, biaya }) => ({
-        number: number - 1,
-        harga: harga - biaya
-      }));
+    if (this.state.qty === 0) {
+      return;
     }
+    this.setState({
+      qty: this.state.qty - 1
+    });
+    this.props.kurangTotalHarga(this.props.harga);
   };
+
   render() {
+    console.log(this.props);
     return (
-      <div style={{ textAlign: "center", marginTop: "10px" }}>
-        <Navbar style={{ color: "black" }} href="/">
-          <button
-            style={{
-              backgroundColor: "green",
-              width: "40px",
-              height: "40px",
-              borderRadius: "5px"
-            }}
-            onClick={this.tambah}
-          >
-            +
-          </button>{" "}
-          <h1 style={{}}>{this.state.number}</h1>
-          <button
-            style={{
-              backgroundColor: "red",
-              width: "40px",
-              height: "40px",
-              borderRadius: "5px"
-            }}
-            className="button2"
-            onClick={this.kurang}
-          >
-            -
-          </button>
-        </Navbar>
-        <br />
-        <br />
-        <p>Harga : {this.state.harga}</p>
+      <div style={{ padding: "10px" }}>
+        <Card>
+          <CardImg top width="100%" src={this.props.gambar} alt="Card" />
+          <CardBody>
+            <CardTitle style={{ fontWeight: "bold" }}>
+              {this.props.name}
+            </CardTitle>
+            <p>Pesan Berapa</p>
+            <p>harga : {this.props.harga}</p>
+            <Navbar>
+              <Button onClick={this.tambah} size="lg" color="success">
+                +
+              </Button>{" "}
+              <h1>{this.state.qty} </h1>
+              <Button
+                onClick={this.kurang}
+                size="lg"
+                className="btn btn-danger m-2"
+              >
+                -
+              </Button>
+            </Navbar>
+          </CardBody>
+        </Card>
       </div>
     );
   }
 }
-
-export default Counter;
