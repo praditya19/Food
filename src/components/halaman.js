@@ -104,7 +104,11 @@ export default class Halaman extends Component {
             </Col>
           ))}
         </Row>
-        <Jumbotron>
+        <br />
+        <div style={{ textAlign: "center" }}>
+          <Button>Next</Button>
+        </div>
+        <Jumbotron style={{ backgroundColor: "white" }}>
           <div style={{ textAlign: "right" }}>
             <p style={{ marginRight: "25px" }}>Total Belanja:</p>
 
