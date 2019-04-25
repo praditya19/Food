@@ -10,7 +10,7 @@ export default class Checkout extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ backgroundColor: "white" }}>
         <Jumbotron fluid>
           <Container fluid>
             <div style={{ textAlign: "right" }}>

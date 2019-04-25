@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Counter from "./counter";
 import { Row, Col, Jumbotron, Button } from "reactstrap";
 import { Link } from "react-router-dom";
-export default class Halaman extends Component {
+export default class Halaman1 extends Component {
   state = {
     makanan: [
       {
@@ -105,9 +105,7 @@ export default class Halaman extends Component {
           ))}
         </Row>
         <br />
-        <div style={{ textAlign: "center" }}>
-          <Button>Next</Button>
-        </div>
+
         <Jumbotron style={{ backgroundColor: "white" }}>
           <div style={{ textAlign: "right" }}>
             <p style={{ marginRight: "25px" }}>Total Belanja:</p>
@@ -115,7 +113,16 @@ export default class Halaman extends Component {
             <p style={{ marginRight: "50px" }}>{this.state.total}</p>
 
             <Button
-              style={{ marginRight: "20px" }}
+              style={{ marginRight: "1000px" }}
+              tag={Link}
+              to="/"
+              color="primary"
+            >
+              Kembali ke Home
+            </Button>
+
+            <Button
+              style={{ textAlign: "left" }}
               tag={Link}
               to="/payment"
               color="primary"

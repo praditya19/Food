@@ -7,9 +7,9 @@ export default class Header extends Component {
         <Navbar color="success" light expand="md">
           <NavbarBrand href="/">
             <img
-              src="https://bilba.go-jek.com/dist/img/gojek-logo.png"
-              width="110"
-              height="30"
+              src="https://lelogama.go-jek.com/ramadhan2018_page_icon/go-food3x.png"
+              width="120"
+              height="50"
               alt="/"
             />
           </NavbarBrand>

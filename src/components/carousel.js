@@ -31,7 +31,7 @@ export default class carousel extends Component {
         </Carousel>
         ;
         <div style={{ textAlign: "center" }}>
-          <Button tag={Link} to="/dashbor" color="primary">
+          <Button tag={Link} to="/dashbor" color="success">
             Pesan Sekarang
           </Button>
         </div>
