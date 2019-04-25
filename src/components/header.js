@@ -4,9 +4,14 @@ export default class Header extends Component {
   render() {
     return (
       <div>
-        <Navbar style={{ backgroundColor: "#00FF00" }} color="faded" light>
-          <NavbarBrand style={{ color: "white" }} href="/" className="mr-auto">
-            {this.props.nama}
+        <Navbar color="success" light expand="md">
+          <NavbarBrand href="/">
+            <img
+              src="https://bilba.go-jek.com/dist/img/gojek-logo.png"
+              width="110"
+              height="30"
+              alt="/"
+            />
           </NavbarBrand>
         </Navbar>
       </div>
