@@ -1,36 +1,34 @@
 import React, { Component } from "react";
 import { Jumbotron, Container, Button } from "reactstrap";
+import Header from "../../components/header";
 import { Link } from "react-router-dom";
-
 export default class Payment extends Component {
-  state = {
-    total: ""
-  };
+  componentDidMount() {
+    var x = sessionStorage.total;
+    document.getElementById("totalHarga").innerHTML = x;
+  }
 
-  tryState = () => {
-    this.setState({
-      total: this.props.total
-    });
-    console.log(this.state.total);
-  };
   render() {
     return (
       <div>
-        <Jumbotron style={{ backgroundColor: "white" }} fluid>
+        <Header name="payment" />
+        <Jumbotron fluid>
           <Container fluid>
             <div style={{ textAlign: "right" }}>
-              <h5>Belanjaan Kamu :</h5>
-              <h2 style={{ marginRight: "60px" }}>{this.props.total}</h2>
-
+              <h1 style={{ textAlign: "center" }} className="display-3">
+                Total yang harus di bayar:
+              </h1>
+              <p style={{ marginRight: "50px" }} id="totalHarga" />
               <Button
-                onClick={this.tryState}
-                style={{ marginRight: "10px" }}
-                color="primary"
+                style={{ marginRight: "1000px" }}
                 tag={Link}
-                to="/payment"
+                to="/dashbor"
+                color="primary"
               >
-                Pesan Sekarang
+                Kembali ke Dashbor
               </Button>
+
+              <Button className="btn btn-warning">Pesan Sekarang</Button>
             </div>
           </Container>
         </Jumbotron>

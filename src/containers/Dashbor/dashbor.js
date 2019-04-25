@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Header from "../../components/header";
 import Counter from "../../components/counter";
-import { Row, Col, Jumbotron, Container, Button } from "reactstrap";
+import { Row, Col, Jumbotron, Button } from "reactstrap";
 import { Link } from "react-router-dom";
-import Payment from "../payment/payment";
+
 class Dashbor extends Component {
   state = {
     makanan: [
@@ -80,6 +80,7 @@ class Dashbor extends Component {
     this.setState({
       total: this.state.total + harga
     });
+    sessionStorage.total = this.state.total + harga;
   };
   kurangTotalHarga = harga => {
     this.setState({
@@ -106,7 +107,22 @@ class Dashbor extends Component {
             </Col>
           ))}
         </Row>
-        <Payment total={this.state.total} />
+        <Jumbotron>
+          <div style={{ textAlign: "right" }}>
+            <p style={{ marginRight: "25px" }}>Total Belanja:</p>
+
+            <p style={{ marginRight: "50px" }}>{this.state.total}</p>
+
+            <Button
+              style={{ marginRight: "20px" }}
+              tag={Link}
+              to="/payment"
+              color="primary"
+            >
+              Checkout
+            </Button>
+          </div>
+        </Jumbotron>
       </div>
     );
   }
