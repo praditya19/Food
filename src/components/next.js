@@ -11,7 +11,7 @@ export default class Halaman1 extends Component {
         price: 15000,
         nama: "kebab",
         gambar:
-          "https://asset-a.grid.id//crop/0x0:0x0/700x465/photo/bobofoto/original/5451_foto-dafafoodindocom.jpg"
+          "https://cdn.idntimes.com/content-images/community/2017/09/onzfq-zbn3yx-20c26c51f7594472d5edaab7bb72a090_600x400.jpg"
       },
       {
         id: 2,
@@ -105,9 +105,7 @@ export default class Halaman1 extends Component {
           ))}
         </Row>
         <br />
-        <Button tag={Link} to="/dashbor/next">
-          Next
-        </Button>
+
         <Jumbotron style={{ backgroundColor: "white" }}>
           <div style={{ textAlign: "right" }}>
             <p style={{ marginRight: "25px" }}>Total Belanja:</p>
@@ -123,7 +121,12 @@ export default class Halaman1 extends Component {
               Kembali ke Home
             </Button>
 
-            <Button tag={Link} to="/payment" color="primary">
+            <Button
+              style={{ textAlign: "left" }}
+              tag={Link}
+              to="/payment"
+              color="primary"
+            >
               Checkout
             </Button>
           </div>
